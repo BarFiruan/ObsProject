@@ -1,9 +1,10 @@
 <?php 
-    $con = mysqli_connect("localhost", "root", "", "obs");
+    include_once 'includes/dbh.inc.php';
+    // $conn = mysqli_connect("localhost", "root", "", "obs");
     $response = array();
-    if($con){
+    if($conn){
         $sql = "select * from usd";
-        $result = mysqli_query($con, $sql);
+        $result = mysqli_query($conn, $sql);
         if($result){
             $index = 0;
             while($row = mysqli_fetch_assoc($result)){
@@ -22,7 +23,7 @@
 
 
         $sql = "select * from euro";
-        $result = mysqli_query($con, $sql);
+        $result = mysqli_query($conn, $sql);
         if($result){
             $index = 0;
             while($row = mysqli_fetch_assoc($result)){
@@ -43,7 +44,7 @@
 
 
         $sql = "select * from gbp";
-        $result = mysqli_query($con, $sql);
+        $result = mysqli_query($conn, $sql);
         if($result){
             $index = 0;
             while($row = mysqli_fetch_assoc($result)){
