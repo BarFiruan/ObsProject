@@ -1,4 +1,6 @@
 <?php 
+include_once 'dbh.inc.php';
+
 // include_once 'dbh.inc.php';
 $current_timezone = date_default_timezone_set('Israel');
 $current_date = date('Y-m-d');
@@ -22,11 +24,11 @@ if(isset($_POST['submit'])){
 
         }
         else{
-    $con = mysqli_connect("localhost", "root", "", "obs");
+    // $con = mysqli_connect("localhost", "root", "", "obs");
     $response = array();
-    if($con){
+    if($conn){
         $sql = "select * from $currency where TIME_PERIOD > '$start' AND TIME_PERIOD < '$end' ORDER BY TIME_PERIOD";
-        $result = mysqli_query($con, $sql);
+        $result = mysqli_query($conn, $sql);
         if($result){
             $index = 0;
             while($row = mysqli_fetch_assoc($result)){
