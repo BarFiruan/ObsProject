@@ -25,6 +25,11 @@
 
             <button type="submit">Presnt Specific Data</button>
         </form>
+        <h4>Clear All Data </h4>
+        <form action="clear_data.php" method="post">
+
+            <button type="submit">Clear Data</button>
+        </form>
 
     </center>
 
